@@ -14,12 +14,8 @@ import java.sql.Types;
 import java.util.*;
 
 /**
- * desc:
- *
- * @author :
- * creat_date: 2018/5/24 0024
- * creat_time: 19:22
- **/
+ * TINYINT 和 SMALLINT 映射为java的integer类型
+ */
 public class MyJavaTypeResolver implements JavaTypeResolver {
 
     protected List<String> warnings;
@@ -97,7 +93,7 @@ public class MyJavaTypeResolver implements JavaTypeResolver {
         typeMap.put(Types.TIMESTAMP, new JavaTypeResolverDefaultImpl.JdbcTypeInformation("TIMESTAMP", //$NON-NLS-1$
                 new FullyQualifiedJavaType(Date.class.getName())));
         typeMap.put(Types.TINYINT, new JavaTypeResolverDefaultImpl.JdbcTypeInformation("TINYINT", //$NON-NLS-1$
-                new FullyQualifiedJavaType(Byte.class.getName())));
+                new FullyQualifiedJavaType(Integer.class.getName())));
         typeMap.put(Types.VARBINARY, new JavaTypeResolverDefaultImpl.JdbcTypeInformation("VARBINARY", //$NON-NLS-1$
                 new FullyQualifiedJavaType("byte[]"))); //$NON-NLS-1$
         typeMap.put(Types.VARCHAR, new JavaTypeResolverDefaultImpl.JdbcTypeInformation("VARCHAR", //$NON-NLS-1$
